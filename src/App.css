@@ -20,7 +20,7 @@ body {
 .calculator-grid > button {
   cursor: pointer;
   font-size: 2rem;
-  border: 2px solid chartreuse;
+  /*border: 2px solid chartreuse;*/
   outline: none;
   background-color: #222;
   border-radius: 10px;
