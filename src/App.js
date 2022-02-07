@@ -3,21 +3,50 @@ import React, { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [num, setNum] = useState(0)
+  const [num, setNum] = useState('')
+  const [operator, setOperator] = useState()
+  const [oldNum, setOldNum] = useState()
 
   function imputNum(e) {
-    setNum(e.target.value)
+    setNum(num + e.target.value)
+  }
+
+  function clear() {
+    setNum('')
+  }
+
+  function operatorHandler(e) {
+    var operatorInput = e.target.value
+    setOperator(operatorInput)
+    setOldNum(num)
+    setNum('')
+  }
+
+  function calculate() {
+    if (operator === '/') {
+      setNum(parseFloat(oldNum) / parseFloat(num))
+    } else if (operator === 'X') {
+      setNum(parseFloat(oldNum) * parseFloat(num))
+    } else if (operator === '-') {
+      setNum(parseFloat(oldNum) - parseFloat(num))
+    } else if (operator === '+') {
+      setNum(parseFloat(oldNum) + parseFloat(num))
+    }
   }
 
   return (
     <div className="calculator-grid">
       <div className="output">
-        <div className="previous-operand">11</div>
+        <div className="previous-operand">{oldNum}</div>
         <div className="current-operand">{num}</div>
       </div>
-      <button className="span-two">AC</button>
+      <button className="span-two" onClick={clear}>
+        AC
+      </button>
       <button>DEL</button>
-      <button>+</button>
+      <button onClick={operatorHandler} value="+">
+        +
+      </button>
       <button onClick={imputNum} value={1}>
         1
       </button>
@@ -27,7 +56,9 @@ function App() {
       <button onClick={imputNum} value={3}>
         3
       </button>
-      <button>*</button>
+      <button onClick={operatorHandler} value="X">
+        X
+      </button>
       <button onClick={imputNum} value={4}>
         4
       </button>
@@ -37,7 +68,9 @@ function App() {
       <button onClick={imputNum} value={6}>
         6
       </button>
-      <button>/</button>
+      <button onClick={operatorHandler} value="/">
+        /
+      </button>
       <button onClick={imputNum} value={7}>
         7
       </button>
@@ -47,10 +80,15 @@ function App() {
       <button onClick={imputNum} value={9}>
         9
       </button>
-      <button>-</button>
+      <button onClick={operatorHandler} value="-">
+        -
+      </button>
       <button>.</button>
       <button onClick={imputNum} value={0}>
         0
+      </button>
+      <button className="span-two" onClick={calculate}>
+        =
       </button>
     </div>
   )
