@@ -13,6 +13,11 @@ function App() {
 
   function clear() {
     setNum('')
+    setOldNum('')
+  }
+
+  function percent() {
+    setNum(num / 100)
   }
 
   function operatorHandler(e) {
@@ -43,7 +48,9 @@ function App() {
       <button className="span-two" onClick={clear}>
         AC
       </button>
-      <button>DEL</button>
+      <button onClick={percent} value="%">
+        %
+      </button>
       <button onClick={operatorHandler} value="+">
         +
       </button>
@@ -83,7 +90,9 @@ function App() {
       <button onClick={operatorHandler} value="-">
         -
       </button>
-      <button>.</button>
+      <button onClick={imputNum} value=".">
+        .
+      </button>
       <button onClick={imputNum} value={0}>
         0
       </button>
