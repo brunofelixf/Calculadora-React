@@ -49,52 +49,52 @@ function App() {
         <button className="span-two" onClick={clear}>
           AC
         </button>
-        <button onClick={percent} value="%">
+        <button className="operator" onClick={percent} value="%">
           %
         </button>
-        <button onClick={operatorHandler} value="+">
+        <button className="operator" onClick={operatorHandler} value="+">
           +
         </button>
-        <button onClick={imputNum} value={1}>
+        <button className="number" onClick={imputNum} value={1}>
           1
         </button>
-        <button onClick={imputNum} value={2}>
+        <button className="number" onClick={imputNum} value={2}>
           2
         </button>
-        <button onClick={imputNum} value={3}>
+        <button className="number" onClick={imputNum} value={3}>
           3
         </button>
-        <button onClick={operatorHandler} value="X">
+        <button className="operator" onClick={operatorHandler} value="X">
           X
         </button>
-        <button onClick={imputNum} value={4}>
+        <button className="number" onClick={imputNum} value={4}>
           4
         </button>
-        <button onClick={imputNum} value={5}>
+        <button className="number" onClick={imputNum} value={5}>
           5
         </button>
-        <button onClick={imputNum} value={6}>
+        <button className="number" onClick={imputNum} value={6}>
           6
         </button>
-        <button onClick={operatorHandler} value="/">
+        <button className="operator" onClick={operatorHandler} value="/">
           /
         </button>
-        <button onClick={imputNum} value={7}>
+        <button className="number" onClick={imputNum} value={7}>
           7
         </button>
-        <button onClick={imputNum} value={8}>
+        <button className="number" onClick={imputNum} value={8}>
           8
         </button>
-        <button onClick={imputNum} value={9}>
+        <button className="number" onClick={imputNum} value={9}>
           9
         </button>
-        <button onClick={operatorHandler} value="-">
+        <button className="operator" onClick={operatorHandler} value="-">
           -
         </button>
-        <button onClick={imputNum} value=".">
+        <button className="number" onClick={imputNum} value=".">
           .
         </button>
-        <button onClick={imputNum} value={0}>
+        <button className="number" onClick={imputNum} value={0}>
           0
         </button>
         <button className="span-two" onClick={calculate}>
