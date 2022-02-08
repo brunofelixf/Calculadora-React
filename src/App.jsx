@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 
 import './App.css'
+import Output from './components/Output'
+import Buttons from './components/Buttons';
 
 var result = false
 
@@ -66,11 +68,14 @@ function App() {
   return (
     <div className="wrapper">
       <div className="calculator-grid">
-        <div className="output">
-          <div className="previous-operand">{oldNum}</div>
-          <div className="current-operand">{num}</div>
-        </div>
-        <button className="span-two" onClick={clear}>
+        {
+          <Output oldNum={oldNum} num={num} />
+        //   <div className="output">
+        //   <div className="previous-operand">{oldNum}</div>
+        //   <div className="current-operand">{num}</div>
+        // </div> 
+        }
+        {/* <button className="span-two" onClick={clear}>
           AC
         </button>
         <button className="operator" onClick={percent} value="%">
@@ -123,7 +128,15 @@ function App() {
         </button>
         <button className="span-two" onClick={calculate}>
           =
-        </button>
+        </button> */
+        <Buttons
+          imputNum={imputNum}
+          clear={clear}
+          percent={percent}
+          operatorHandler={operatorHandler}
+          calculate={calculate}
+        />
+        }
       </div>
     </div>
   )

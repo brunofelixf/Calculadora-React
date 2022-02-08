@@ -1,0 +1,27 @@
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  /*border: 2px solid chartreuse;*/
+  outline: none;
+
+  border-radius: 10px;
+  color: white;
+  box-shadow: -2px -2px 12px rgb(19, 18, 18), 5px 5px 12px rgb(0 0 0 /16%);
+  border: none;
+}
+button:hover,
+button:focus {
+  background-color: rgba(22, 21, 21, 0.9);
+  color: white;
+}
+
+.span-two {
+  grid-column: span 2;
+  background-color: rgb(58, 58, 58);
+}
+.number {
+  background-color: #222;
+}
+.operator {
+  background-color: rgb(44, 43, 43);
+}
