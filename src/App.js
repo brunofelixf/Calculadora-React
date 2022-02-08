@@ -2,18 +2,38 @@ import React, { useState } from 'react'
 
 import './App.css'
 
+var result = false
+
 function App() {
   const [num, setNum] = useState('')
   const [operator, setOperator] = useState()
   const [oldNum, setOldNum] = useState()
+  //const [result, setResult] = useState(false)
 
-  function imputNum(e) {
+  function imput2(e) {
     setNum(num + e.target.value)
+    console.log('result do imput2: ' + result)
+    console.log('setnum do imput2: ' + num + e.target.value)
+  }
+  function imputNum(e) {
+    console.log('result na entrada do imputNum: ' + result)
+    if (result === true) {
+      //clear()
+      setOldNum(num)
+      setNum(e.target.value)
+      result = false
+      console.log('result dentro If true depois do clear: ' + result)
+      console.log('num do if true: ' + num)
+    } else imput2(e)
   }
 
   function clear() {
     setNum('')
     setOldNum('')
+    //setResult(false)
+    result = false
+    console.log('result na função clear: ' + result)
+    console.log('num dentro do clear: ' + num)
   }
 
   function percent() {
@@ -28,6 +48,7 @@ function App() {
   }
 
   function calculate() {
+    console.log('result na entrada do calculate:' + result)
     if (operator === '/') {
       setNum(parseFloat(oldNum) / parseFloat(num))
     } else if (operator === 'X') {
@@ -37,6 +58,9 @@ function App() {
     } else if (operator === '+') {
       setNum(parseFloat(oldNum) + parseFloat(num))
     }
+    //setResult(true)
+    result = true
+    console.log('result saída do calculate = ' + result)
   }
 
   return (
